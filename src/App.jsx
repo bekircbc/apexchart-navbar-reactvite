@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 export const App = () => {
   const [options, setOptions] = useState({});
   const [series, setSeries] = useState([]);
+  const [type, setType] = useState("line");
 
   useEffect(() => {
     setOptions({
@@ -27,17 +28,49 @@ export const App = () => {
         data: [20, 30, 55, 75, 63, 60, 80, 134, 110, 40, 55, 64],
       },
     ]);
-  }, []);
+  }, [type]);
 
   return (
-    <>
+    <div className="App">
+      <h1>Apex Chart with Navbar</h1>
+      <nav className="navbar">
+        <button onClick={() => setType("bar")}>Bar</button>
+        <button onClick={() => setType("line")}>Line</button>
+        <button onClick={() => setType("radar")}>Radar</button>
+        <button onClick={() => setType("donut")}>Donut</button>
+        <button onClick={() => setType("area")}>Area</button>
+
+        <button onClick={() => setType("histogram")}>Histogram</button>
+        <button onClick={() => setType("pie")}>Pie</button>
+        <button onClick={() => setType("radialBar")}>Radial Bar</button>
+        <button onClick={() => setType("scatter")}>Scatter</button>
+        <button onClick={() => setType("bubble")}>Bubble</button>
+        <button onClick={() => setType("heatmap")}>Heatmap</button>
+        <button onClick={() => setType("candleStick")}>Candle Stick</button>
+      </nav>
+
+      {/* <nav className="navbar">
+        <button>Bar</button>
+        <button>Line</button>
+        <button>Donut</button>
+        <button>Area</button>
+        <button>Radar</button>
+        <button>Histogram</button>
+        <button>Pie</button>
+        <button>Radial Bar</button>
+        <button>Scatter</button>
+        <button>Bubble</button>
+        <button>Heatmap</button>
+        <button>Candle Stick</button>
+      </nav> */}
+
       <Chart
         options={options}
         series={series}
-        type="line" //"bar","line", "donut","area", "radar", "histogram", "pie", "radialBar", scatter, bubble, heatmap, candlestick
+        type={type} //"bar","line", "donut","area", "radar", "histogram", "pie", "radialBar", scatter, bubble, heatmap, candlestick
         width={800}
         height={520}
       />
-    </>
+    </div>
   );
 };
