@@ -39,7 +39,6 @@ export const App = () => {
         <button onClick={() => setType("radar")}>Radar</button>
         <button onClick={() => setType("donut")}>Donut</button>
         <button onClick={() => setType("area")}>Area</button>
-
         <button onClick={() => setType("histogram")}>Histogram</button>
         <button onClick={() => setType("pie")}>Pie</button>
         <button onClick={() => setType("radialBar")}>Radial Bar</button>
@@ -48,21 +47,6 @@ export const App = () => {
         <button onClick={() => setType("heatmap")}>Heatmap</button>
         <button onClick={() => setType("candleStick")}>Candle Stick</button>
       </nav>
-
-      {/* <nav className="navbar">
-        <button>Bar</button>
-        <button>Line</button>
-        <button>Donut</button>
-        <button>Area</button>
-        <button>Radar</button>
-        <button>Histogram</button>
-        <button>Pie</button>
-        <button>Radial Bar</button>
-        <button>Scatter</button>
-        <button>Bubble</button>
-        <button>Heatmap</button>
-        <button>Candle Stick</button>
-      </nav> */}
 
       <Chart
         options={options}
