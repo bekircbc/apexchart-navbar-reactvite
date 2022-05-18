@@ -1,4 +1,4 @@
-## Moving Box
+## Apex Chart with navbar
 
 - programmed with scss and react. created with vite.
 
